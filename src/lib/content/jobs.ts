@@ -1,0 +1,78 @@
+export const jobs = [
+  {
+    slug: "qc-inspector",
+    title: "Quality control inspector",
+    location: "Dhaka / Savar",
+    experience: "2–5 years in leather inspection",
+    education: "Diploma in leather technology or equivalent floor experience",
+    responsibilities: [
+      "Piece-by-piece inspection against the contract",
+      "Defect classification and selection grading",
+      "Inspection reports and quality seals",
+      "Feedback to mills on recurring faults",
+    ],
+    requirements: [
+      "Leather quality standards and defect language",
+      "Substance measurement and shade assessment",
+      "English and Bengali for reports",
+      "Comfortable on a mill floor",
+    ],
+  },
+  {
+    slug: "technologist",
+    title: "Leather technologist",
+    location: "Dhaka / Savar",
+    experience: "3–7 years",
+    education: "Bachelor in leather technology or chemical engineering",
+    responsibilities: [
+      "Specs, lab dips and mill trials",
+      "Tannage and finish advice for buyer end-use",
+      "Technical dialogue with tanneries",
+      "Keep the file current on restricted substances",
+    ],
+    requirements: [
+      "Chrome, veg and finishing chemistry",
+      "Ability to write a spec a mill can run",
+      "Clear English with overseas buyers",
+      "Travel to Hemayetpur as routine",
+    ],
+  },
+  {
+    slug: "sales",
+    title: "Sales & business development",
+    location: "Dhaka, with travel",
+    experience: "2–4 years international sales",
+    education: "Business, marketing or related",
+    responsibilities: [
+      "New buyers in existing and new markets",
+      "Quotations and sample programmes",
+      "Account management after the first PO",
+      "Handoff to operations without dropping the thread",
+    ],
+    requirements: [
+      "Export sales discipline",
+      "Written English that a factory can act on",
+      "Leather knowledge is an advantage, not a gate",
+      "Target ownership",
+    ],
+  },
+  {
+    slug: "supply-chain",
+    title: "Supply chain coordinator",
+    location: "Dhaka",
+    experience: "2–3 years",
+    education: "Supply chain, logistics or business",
+    responsibilities: [
+      "Mill scheduling against the PO",
+      "Shipping bookings and documents",
+      "Status to the buyer without being asked twice",
+      "Exception handling when a lot is late or short",
+    ],
+    requirements: [
+      "Export documentation literacy",
+      "Calm timeline management",
+      "Office tools and shipment tracking",
+      "Direct, precise communication",
+    ],
+  },
+];

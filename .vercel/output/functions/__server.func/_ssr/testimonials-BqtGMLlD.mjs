@@ -1,0 +1,61 @@
+//#region node_modules/.nitro/vite/services/ssr/assets/testimonials-BqtGMLlD.js
+var testimonials = [
+	{
+		name: "Michael Chen",
+		role: "Purchasing director",
+		firm: "Shanghai leather goods manufacturer, China",
+		product: "Cow full chrome",
+		years: "5+ years",
+		quote: "Inspection is not a slogan with them. Every shipment matches the spec we signed. That is how you keep a Chinese finishing plant running without rework."
+	},
+	{
+		name: "Elena Rossi",
+		role: "Production manager",
+		firm: "Footwear & goods atelier, Italy",
+		product: "Goat finished",
+		years: "3 years",
+		quote: "Goat from ABM has the fine break our last requires. They understand what an Italian upper should feel like, and they answer the same day."
+	},
+	{
+		name: "Kim Soo-min",
+		role: "Chief executive",
+		firm: "Leather industries, Korea",
+		product: "Buffalo",
+		years: "4 years",
+		quote: "On-time and consistent. Piece-by-piece inspection is why we stopped dual-sourcing this article. Reliability is the whole argument in our market."
+	},
+	{
+		name: "Ahmed Hassan",
+		role: "Operations director",
+		firm: "Leather works, UAE",
+		product: "Custom finished",
+		years: "2 years",
+		quote: "They developed a finish we could not find locally. Technologists on the file, not only a salesman. That is rare from a buying house."
+	},
+	{
+		name: "Sarah Williams",
+		role: "Sourcing manager",
+		firm: "Fashion brands, United Kingdom",
+		product: "Chrome-free",
+		years: "3 years",
+		quote: "Chrome-free lots that actually pass the lab, plus honest notes on what Bangladesh can and cannot do this season. We plan around that."
+	},
+	{
+		name: "Hiroshi Tanaka",
+		role: "Quality director",
+		firm: "Leather craft, Japan",
+		product: "Cow crust",
+		years: "6 years",
+		quote: "Japanese incoming inspection is unforgiving. ABM’s reports match what we find on the table. Documentation is complete. We have kept the partnership for a reason."
+	},
+	{
+		name: "Claire Dubois",
+		role: "Private-label director",
+		firm: "Goods importer, France",
+		product: "Handbags & belts",
+		years: "2 years",
+		quote: "We already bought crust from ABM. Putting the bag and belt programme on the same file saved us a second factory relationship. Samples matched bulk. That is the whole test."
+	}
+];
+//#endregion
+export { testimonials as t };
