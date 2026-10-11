@@ -24,6 +24,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ShippingRouteImport } from './routes/shipping'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as VideosRouteImport } from './routes/videos'
 import { Route as MadeProductsIndexRouteImport } from './routes/made-products.index'
 import { Route as MadeProductsSlugRouteImport } from './routes/made-products.$slug'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
@@ -104,6 +105,11 @@ const TestimonialsRoute = TestimonialsRouteImport.update({
   path: '/testimonials',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VideosRoute = VideosRouteImport.update({
+  id: '/videos',
+  path: '/videos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MadeProductsIndexRoute = MadeProductsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -141,6 +147,7 @@ export interface FileRoutesByFullPath {
   '/shipping': typeof ShippingRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/videos': typeof VideosRoute
   '/made-products/$slug': typeof MadeProductsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/made-products/': typeof MadeProductsIndexRoute
@@ -160,6 +167,7 @@ export interface FileRoutesByTo {
   '/shipping': typeof ShippingRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/videos': typeof VideosRoute
   '/made-products/$slug': typeof MadeProductsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/made-products': typeof MadeProductsIndexRoute
@@ -182,6 +190,7 @@ export interface FileRoutesById {
   '/shipping': typeof ShippingRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/videos': typeof VideosRoute
   '/made-products/$slug': typeof MadeProductsSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/made-products/': typeof MadeProductsIndexRoute
@@ -205,6 +214,7 @@ export interface FileRouteTypes {
     | '/shipping'
     | '/terms'
     | '/testimonials'
+    | '/videos'
     | '/made-products/$slug'
     | '/products/$slug'
     | '/made-products/'
@@ -224,6 +234,7 @@ export interface FileRouteTypes {
     | '/shipping'
     | '/terms'
     | '/testimonials'
+    | '/videos'
     | '/made-products/$slug'
     | '/products/$slug'
     | '/made-products'
@@ -245,6 +256,7 @@ export interface FileRouteTypes {
     | '/shipping'
     | '/terms'
     | '/testimonials'
+    | '/videos'
     | '/made-products/$slug'
     | '/products/$slug'
     | '/made-products/'
@@ -267,6 +279,7 @@ export interface RootRouteChildren {
   ShippingRoute: typeof ShippingRoute
   TermsRoute: typeof TermsRoute
   TestimonialsRoute: typeof TestimonialsRoute
+  VideosRoute: typeof VideosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -376,6 +389,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/videos': {
+      id: '/videos'
+      path: '/videos'
+      fullPath: '/videos'
+      preLoaderRoute: typeof VideosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/made-products/': {
       id: '/made-products/'
       path: '/'
@@ -451,6 +471,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShippingRoute: ShippingRoute,
   TermsRoute: TermsRoute,
   TestimonialsRoute: TestimonialsRoute,
+  VideosRoute: VideosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
