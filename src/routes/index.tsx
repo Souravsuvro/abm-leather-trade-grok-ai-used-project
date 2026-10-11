@@ -3,11 +3,14 @@ import { ArrowRight, BadgeCheck, Clock3, FileCheck2, Globe2 } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CtaBand } from "@/components/layout/site-shell";
+import { Marquee } from "@/components/marquee-row";
 import { company } from "@/lib/content/company";
 import { featuredMadeProducts, goodsCategoryLabel } from "@/lib/content/made-products";
+import { marketNotes } from "@/lib/content/markets";
 import { featuredProducts, speciesLabel, stageLabel } from "@/lib/content/products";
 import { processSteps } from "@/lib/content/services";
 import { testimonials } from "@/lib/content/testimonials";
+import { millVideos } from "@/lib/content/videos";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -162,6 +165,46 @@ function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 py-20">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-saddle">From the mill</p>
+            <h2 className="mt-2 max-w-xl font-display text-4xl font-semibold">
+              Watch the leather before the sample lands.
+            </h2>
+            <p className="mt-4 max-w-xl text-muted">
+              Public films from the ABM Trading Corporation YouTube channel — crust, splits, vegetable and finished.
+            </p>
+          </div>
+          <Button asChild variant="outline">
+            <Link to="/videos">All {millVideos.length} films</Link>
+          </Button>
+        </div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {millVideos.slice(0, 3).map((v) => (
+            <article key={v.id} className="overflow-hidden rounded-lg bg-paper shadow-[var(--shadow-border)]">
+              <div className="aspect-video bg-ink">
+                <iframe
+                  title={v.title}
+                  className="size-full"
+                  src={`https://www.youtube-nocookie.com/embed/${v.id}`}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+              <div className="p-5">
+                <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-muted">
+                  {v.article} · {v.duration}
+                </p>
+                <h3 className="mt-2 font-display text-xl font-semibold">{v.title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="bg-cream/60">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 lg:grid-cols-2">
           <div>
@@ -217,6 +260,35 @@ function Home() {
         </div>
       </section>
 
+      <section className="border-y border-line bg-paper">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-saddle">Buyer brief</p>
+          <h2 className="mt-2 font-display text-3xl font-semibold md:text-4xl">
+            Send this once. We quote faster.
+          </h2>
+          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Article (cow/goat/buffalo, wet blue / crust / finished)",
+              "Substance range and selection grade",
+              "Colour or finish reference (sample or Pantone)",
+              "Monthly or quarterly volume in sq ft",
+              "Destination port and preferred Incoterm",
+              "Any chemical or eco constraint (REACH, chrome-free)",
+            ].map((item, i) => (
+              <li key={item} className="flex gap-3 rounded-md bg-canvas p-4 shadow-[var(--shadow-border)]">
+                <span className="font-display text-xl text-saddle">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-sm text-body">{item}</span>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-8">
+            <Button asChild>
+              <Link to="/contact">Open enquiry</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-4 py-20">
         <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-saddle">Process</p>
         <h2 className="mt-2 font-display text-4xl font-semibold">Brief. Source. Inspect. Ship.</h2>
@@ -231,35 +303,52 @@ function Home() {
         </ol>
       </section>
 
-      <section className="border-y border-line bg-paper">
-        <div className="mx-auto max-w-6xl px-4 py-14">
-          <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-saddle">Markets</p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {company.markets.map((m) => (
-              <span
-                key={m}
-                className="rounded-full bg-cream px-4 py-2 text-sm font-medium text-ink"
-              >
-                {m}
-              </span>
-            ))}
+      <section className="border-y border-line bg-paper py-14">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-saddle">Markets</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold">Where the containers clear.</h2>
+            </div>
+            <Button asChild variant="outline">
+              <Link to="/markets">Market notes</Link>
+            </Button>
           </div>
         </div>
+        <Marquee label="Export markets" duration="50s">
+          {marketNotes.map((m) => (
+            <div
+              key={m.country}
+              className="w-72 shrink-0 rounded-lg bg-canvas p-5 shadow-[var(--shadow-border)]"
+            >
+              <p className="font-display text-2xl font-semibold text-ink">{m.country}</p>
+              <p className="mt-1 text-[11px] font-semibold tracking-[0.14em] uppercase text-saddle">
+                {m.role}
+              </p>
+              <p className="mt-3 line-clamp-4 text-sm text-muted">{m.text}</p>
+            </div>
+          ))}
+        </Marquee>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-saddle">Clients</p>
-            <h2 className="mt-2 font-display text-4xl font-semibold">What buyers actually say.</h2>
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-saddle">Clients</p>
+              <h2 className="mt-2 font-display text-4xl font-semibold">What buyers actually say.</h2>
+            </div>
+            <Button asChild variant="outline" className="hidden sm:inline-flex">
+              <Link to="/testimonials">All notes</Link>
+            </Button>
           </div>
-          <Button asChild variant="outline" className="hidden sm:inline-flex">
-            <Link to="/testimonials">All notes</Link>
-          </Button>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {testimonials.slice(0, 3).map((t) => (
-            <blockquote key={t.name} className="rounded-md bg-paper p-6 shadow-[var(--shadow-border)]">
+        <Marquee label="Client testimonials" duration="48s">
+          {testimonials.map((t) => (
+            <blockquote
+              key={t.name}
+              className="w-80 shrink-0 rounded-md bg-paper p-6 shadow-[var(--shadow-border)]"
+            >
               <p className="text-sm leading-relaxed text-body">“{t.quote}”</p>
               <footer className="mt-5">
                 <p className="font-semibold text-ink">{t.name}</p>
@@ -269,7 +358,7 @@ function Home() {
               </footer>
             </blockquote>
           ))}
-        </div>
+        </Marquee>
       </section>
 
       <CtaBand />
