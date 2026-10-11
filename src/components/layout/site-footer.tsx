@@ -11,6 +11,17 @@ export function SiteFooter() {
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/70">
             {company.lede}
           </p>
+          <div className="mt-5 flex flex-wrap gap-3 text-sm">
+            <a className="text-cream/80 hover:text-cream" href={company.social.youtube} target="_blank" rel="noreferrer">
+              YouTube
+            </a>
+            <a className="text-cream/80 hover:text-cream" href={company.social.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a className="text-cream/80 hover:text-cream" href={company.social.instagram} target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+          </div>
         </div>
         <div>
           <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-cream/50">Visit</p>
@@ -61,6 +72,11 @@ export function SiteFooter() {
                 {company.phone}
               </a>
               <span className="block text-cream/55">WhatsApp · WeChat · Line · Viber</span>
+            </p>
+            <p>
+              <a className="hover:text-cream" href={`mailto:${company.emails.contact}`}>
+                {company.emails.contact}
+              </a>
             </p>
             <p>
               <a className="hover:text-cream" href={`mailto:${company.emails.business}`}>

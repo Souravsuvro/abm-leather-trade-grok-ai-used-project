@@ -12,6 +12,7 @@ export const company = {
   emails: {
     general: "aamohanbd@gmail.com",
     business: "abmtrc@gmail.com",
+    contact: "contact@abmleathertrade.com",
     careers: "abmtrc@gmail.com",
   },
   hours: "Saturday–Thursday, 10:00–20:00 (Dhaka). Friday closed.",
@@ -36,6 +37,7 @@ export const company = {
   social: {
     linkedin: "https://bd.linkedin.com/company/abm-trading-corporation",
     instagram: "https://www.instagram.com/abm_trading_corporation/",
+    youtube: "https://www.youtube.com/channel/UCmocnhxZOjGNjonUs7Pd1zA",
   },
   memberships: [
     "Dhaka Chamber of Commerce and Industry (DCCI) — General Member",
@@ -82,6 +84,7 @@ export const nav = [
 ] as const;
 
 export const moreNav = [
+  { to: "/videos", label: "Videos" },
   { to: "/gallery", label: "Gallery" },
   { to: "/certifications", label: "Certifications" },
   { to: "/shipping", label: "Shipping" },

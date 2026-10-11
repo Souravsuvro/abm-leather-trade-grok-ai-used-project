@@ -34,6 +34,14 @@ function ContactPage() {
               </li>
               <li>
                 <span className="block text-[11px] font-semibold tracking-[0.16em] uppercase text-muted">
+                  Enquiries
+                </span>
+                <a className="text-ink" href={`mailto:${company.emails.contact}`}>
+                  {company.emails.contact}
+                </a>
+              </li>
+              <li>
+                <span className="block text-[11px] font-semibold tracking-[0.16em] uppercase text-muted">
                   Business
                 </span>
                 <a className="text-ink" href={`mailto:${company.emails.business}`}>
@@ -89,7 +97,7 @@ function ContactPage() {
         items={[
           { to: "/products", label: "Leather articles", text: "Open an article before you write the brief." },
           { to: "/made-products", label: "Made products", text: "Belts, bags, wallets — include a tech pack if you have one." },
-          { to: "/faq", label: "FAQ", text: "Lead times, tannages and documents, already answered." },
+          { to: "/videos", label: "Mill videos", text: "Watch the leather before you book the sample." },
         ]}
       />
     </main>
